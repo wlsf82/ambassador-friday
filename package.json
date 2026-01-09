@@ -1,0 +1,25 @@
+{
+  "name": "ambassador-friday",
+  "version": "1.0.0",
+  "description": "Sample project for the Ambassador Friday initiative.",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run:local": "cypress run",
+    "cy:run:test": "cypress run --config baseUrl=https://example.test.com --env environment=test",
+    "cy:run:staging": "cypress run --config baseUrl=https://example.staging.com --env environment=staging",
+    "cy:run:prod": "cypress run --config baseUrl=https://example.com --env environment=prod",
+    "test": "npm run cy:run:local"
+  },
+  "keywords": [
+    "cypress",
+    "talking-about-testing",
+    "testing"
+  ],
+  "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^15.8.2"
+  }
+}
