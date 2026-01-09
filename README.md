@@ -80,4 +80,4 @@ The `cypress/support/commands.js` file also contains a helper function:
 
 ___
 
-Built with love by [Walmyr](https://walmyr.dev).
+This project was inspired by the following content: [**Logging into different environments with Cypress**](https://dev.to/cypress/logging-into-different-environments-with-cypress-l6i).
