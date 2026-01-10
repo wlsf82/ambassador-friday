@@ -23,11 +23,8 @@ Cypress.Commands.add('login', (environment, userType) => {
 Cypress.Commands.add('sessionLogin', (environment, userType) => {
   setEnvironmentCredentials(environment)
 
-  const setup = () => {
-    cy.login(environment, userType)
-  }
-
   const sessionId = Cypress.env('credentials')[userType].USER_EMAIL
+  const setup = () => cy.login(environment, userType)
 
   cy.session(sessionId, setup)
   // cy.visit('/dashboard')
