@@ -1,7 +1,7 @@
 {
   "name": "ambassador-friday",
   "version": "1.0.0",
-  "description": "Sample project for the Ambassador Friday initiative.",
+  "description": "Sample Cypress project to demonstrate how to run tests against different environments logging in with users with different roles.",
   "main": "cypress.config.js",
   "scripts": {
     "start": "node src/server.js",

@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/wlsf82/ambassador-friday/actions/workflows/ci.yml/badge.svg)](https://github.com/wlsf82/ambassador-friday/actions/workflows/ci.yml)
 
-Sample project for the Ambassador Friday initiative.
+Sample Cypress project to demonstrate how to run tests against different environments logging in with users with different roles.
 
 ## Prerequisites
 
