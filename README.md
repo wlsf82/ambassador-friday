@@ -93,7 +93,7 @@ npm run cy:run:prod
 
 ## Project Structure
 
-- `cypress/e2e/`: Contains the test specifications, organized by user role (`admin.cy.js`, `free.cy.js`, `pro.cy.js`).
+- `cypress/e2e/`: Contains the test specifications, including role-based specs (`admin.cy.js`, `free.cy.js`, `pro.cy.js`) and auth flows (`login.cy.js`).
 - `cypress/support/`: Contains support files and custom commands.
 
 ## Custom Commands
