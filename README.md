@@ -1,6 +1,6 @@
 # ambassador-friday
 
-[![CI](https://github.com/wlsf82/ambassador-friday/actions/workflows/prod.yml/badge.svg)](https://github.com/wlsf82/ambassador-friday/actions/workflows/prod.yml)
+[![CI](https://github.com/wlsf82/ambassador-friday/actions/workflows/ci.yml/badge.svg)](https://github.com/wlsf82/ambassador-friday/actions/workflows/ci.yml)
 
 Sample project for the Ambassador Friday initiative.
 
