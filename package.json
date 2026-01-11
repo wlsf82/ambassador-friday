@@ -5,9 +5,9 @@
   "main": "cypress.config.js",
   "scripts": {
     "start": "node src/server.js",
-    "test": "npm run cy:run:local",
     "start:server:and:test:local": "start-server-and-test start http://localhost:3000 test",
     "start:server:and:open:local": "start-server-and-test start http://localhost:3000 cy:open",
+    "test": "npm run cy:run:local",
     "cy:open": "cypress open",
     "cy:open:test": "cypress open --config baseUrl=http://example.com --env environment=test",
     "cy:open:staging": "cypress open --config baseUrl=https://www.example.com --env environment=staging",
