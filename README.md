@@ -11,7 +11,15 @@ Sample project for the Ambassador Friday initiative.
 
 ## Installation
 
-Run `npm install` (or `npm i` for short) to install the dev dependencies.
+Run `npm install` (or `npm i` for short) to install the dependencies and dev dependencies.
+
+## Starting the Local App
+
+To start the local app server (default: `http://localhost:3000`):
+
+```bash
+npm start
+```
 
 ## Configuration
 
@@ -29,10 +37,29 @@ The `package.json` file contains several scripts to run tests in different envir
 
 ### Open Mode
 
-To open the Cypress Test Runner:
+To open the Cypress Test Runner against the **local** environment:
 
 ```bash
 npm run cy:open
+```
+
+To open Cypress against the local app while also starting the server automatically:
+
+```bash
+npm run start:server:and:open:local
+```
+
+To open the Cypress Test Runner against specific environments:
+
+```bash
+# Test environment
+npm run cy:open:test
+
+# Staging environment
+npm run cy:open:staging
+
+# Production environment
+npm run cy:open:prod
 ```
 
 ### Headless Mode
@@ -43,6 +70,12 @@ To run tests in headless mode against the **local** environment (default):
 npm run cy:run:local
 # or
 npm test
+```
+
+To run headless tests against the local app while also starting the server automatically:
+
+```bash
+npm run start:server:and:test:local
 ```
 
 To run tests against specific environments:
