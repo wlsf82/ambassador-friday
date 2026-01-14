@@ -13,6 +13,10 @@ Sample Cypress project to demonstrate how to run tests against different environ
 
 Run `npm install` (or `npm i` for short) to install the dependencies and dev dependencies.
 
+## Unit tests
+
+Run `npm run test:unit` to run the unit tests.
+
 ## Starting the Local App
 
 To start the local app server (default: `http://localhost:3000`):
