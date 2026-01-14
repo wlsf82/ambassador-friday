@@ -1,12 +1,27 @@
-name: End-to-end tests 🧪
+name: Tests 🧪
 on:
   push:
     branches:
       - main
   workflow_dispatch:
 jobs:
+  unit-tests:
+    runs-on: ubuntu-24.04
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+
+      - name: Run unit tests
+        run: npm run test:unit
   cypress-run-local:
     runs-on: ubuntu-24.04
+    needs: unit-tests
     steps:
       - name: Checkout
         uses: actions/checkout@v4
