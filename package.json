@@ -15,7 +15,8 @@
     "cy:run:local": "cypress run",
     "cy:run:test": "cypress run --config baseUrl=http://example.com --env environment=test",
     "cy:run:staging": "cypress run --config baseUrl=https://www.example.com --env environment=staging",
-    "cy:run:prod": "cypress run --config baseUrl=https://example.com --env environment=prod"
+    "cy:run:prod": "cypress run --config baseUrl=https://example.com --env environment=prod",
+    "test:unit": "node --test cypress/support/setEnvironmentCredentials.test.js"
   },
   "keywords": [
     "cypress",
