@@ -49,3 +49,5 @@ function setEnvironmentCredentials(environment) {
       cy.log(`Invalid environment: ${environment}`)
   }
 }
+
+module.exports = setEnvironmentCredentials
