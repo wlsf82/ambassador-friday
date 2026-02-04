@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Cypress run local
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         env:
           CYPRESS_LOCAL_CREDENTIALS: "${{ secrets.CYPRESS_LOCAL_CREDENTIALS }}"
         with:
@@ -29,9 +29,9 @@ jobs:
     needs: cypress-run-local
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Cypress run test
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         env:
           CYPRESS_TEST_CREDENTIALS: "${{ secrets.CYPRESS_TEST_CREDENTIALS }}"
         with:
@@ -49,9 +49,9 @@ jobs:
     needs: cypress-run-test
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Cypress run staging
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         env:
           CYPRESS_STAGING_CREDENTIALS: "${{ secrets.CYPRESS_STAGING_CREDENTIALS }}"
         with:
@@ -69,9 +69,9 @@ jobs:
     needs: cypress-run-staging
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Cypress run prod
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         env:
           CYPRESS_PROD_CREDENTIALS: "${{ secrets.CYPRESS_PROD_CREDENTIALS }}"
         with:
