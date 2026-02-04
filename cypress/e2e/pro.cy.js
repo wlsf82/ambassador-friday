@@ -1,6 +1,6 @@
 describe('PRO Features', () => {
   beforeEach(() => {
-    cy.sessionLogin(Cypress.env('environment'), 'PRO')
+    cy.sessionLogin(Cypress.expose('environment'), 'PRO')
   })
 
   it('does something as a PRO user', () => {

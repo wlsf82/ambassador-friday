@@ -9,13 +9,13 @@
     "start:server:and:open:local": "start-server-and-test start http://localhost:3000 cy:open",
     "test": "npm run cy:run:local",
     "cy:open": "cypress open",
-    "cy:open:test": "cypress open --config baseUrl=http://example.com --env environment=test",
-    "cy:open:staging": "cypress open --config baseUrl=https://www.example.com --env environment=staging",
-    "cy:open:prod": "cypress open --config baseUrl=https://example.com --env environment=prod",
+    "cy:open:test": "cypress open --config baseUrl=http://example.com --expose environment=test",
+    "cy:open:staging": "cypress open --config baseUrl=https://www.example.com --expose environment=staging",
+    "cy:open:prod": "cypress open --config baseUrl=https://example.com --expose environment=prod",
     "cy:run:local": "cypress run",
-    "cy:run:test": "cypress run --config baseUrl=http://example.com --env environment=test",
-    "cy:run:staging": "cypress run --config baseUrl=https://www.example.com --env environment=staging",
-    "cy:run:prod": "cypress run --config baseUrl=https://example.com --env environment=prod"
+    "cy:run:test": "cypress run --config baseUrl=http://example.com --expose environment=test",
+    "cy:run:staging": "cypress run --config baseUrl=https://www.example.com --expose environment=staging",
+    "cy:run:prod": "cypress run --config baseUrl=https://example.com --expose environment=prod"
   },
   "keywords": [
     "cypress",
@@ -26,7 +26,7 @@
   "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
-    "cypress": "^15.9.0",
+    "cypress": "^15.10.0",
     "start-server-and-test": "^2.1.3"
   },
   "dependencies": {

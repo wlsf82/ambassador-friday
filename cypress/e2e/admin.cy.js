@@ -1,6 +1,6 @@
 describe('ADMIN Features', () => {
   beforeEach(() => {
-    cy.sessionLogin(Cypress.env('environment'), 'ADMIN')
+    cy.sessionLogin(Cypress.expose('environment'), 'ADMIN')
   })
 
   it('does something as an ADMIN user', () => {
