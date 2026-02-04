@@ -107,9 +107,38 @@ Both commands take an `environment` ('local', 'test', 'staging', 'prod') and a `
 
 ### Helper Function
 
-The `cypress/support/commands.js` file also contains a helper function:
+The `cypress/support/commands.js` file also contains a helper command:
 
-- `setEnvironmentCredentials(environment)`: Sets the `credentials` Cypress environment variable based on the provided `environment`. This allows the custom commands to access the correct credentials (defined in `cypress.env.json`) for `local`, `test`, `staging`, or `prod` environments.
+- `cy.setEnvironmentCredentials(environment)`: Retrieves credentials from `cypress.env.json` via `cy.env()` and returns the credentials object for the selected environment (`local`, `test`, `staging`, `prod`). The returned object is keyed by user roles (`FREE`, `PRO`, `ADMIN`). If an invalid environment is provided, the command logs an error to surface misconfiguration early.
+
+Example:
+
+```js
+cy.setEnvironmentCredentials('local').then((credentials) => {
+  const email = credentials.ADMIN.USER_EMAIL
+  const password = credentials.ADMIN.USER_PASSWORD
+})
+```
+
+In specs, environment selection is driven by `Cypress.expose('environment')`:
+
+```js
+cy.login(Cypress.expose('environment'), 'ADMIN')
+```
+
+This ensures the correct credentials are used for the currently selected environment.
+
+## New Cypress Features
+
+This project makes use of two new Cypress features to simplify environment handling:
+
+- [**`cy.env()`**](https://docs.cypress.io/api/commands/env): Retrieves multiple values from `cypress.env.json` file or `CYPRESS_*` variables  in one call. We use it in `cy.setEnvironmentCredentials()` to load all environment credential sets and return the one matching the selected environment.
+- [**`Cypress.expose()`**](https://docs.cypress.io/api/cypress-api/expose): Reads config values exposed by Cypress (from `cypress.config.js` or CLI). We expose an `environment` value in [cypress.config.js](cypress.config.js) and override it via CLI flags in scripts (e.g., `--expose environment=test`). Specs read it with `Cypress.expose('environment')` to decide which credentials to use.
+
+Configured defaults:
+
+- In [cypress.config.js](cypress.config.js), `e2e.expose.environment` is set to `local`.
+- In [package.json](package.json), scripts pass `--expose environment=…` to target `test`, `staging`, or `prod` when needed.
 
 ___
 
