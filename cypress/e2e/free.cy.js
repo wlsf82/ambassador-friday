@@ -1,6 +1,6 @@
 describe('FREE Features', () => {
   beforeEach(() => {
-    cy.sessionLogin(Cypress.env('environment'), 'FREE')
+    cy.sessionLogin(Cypress.expose('environment'), 'FREE')
   })
 
   it('does something as a FREE user', () => {
