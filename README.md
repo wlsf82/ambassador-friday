@@ -26,14 +26,14 @@ npm start
 This project uses a `cypress.env.json` file to store sensitive data (credentials).
 
 1. Create a `cypress.env.json` file in the root directory.
-2. Copy the content from `cypress.env.example.json` into `cypress.env.json`.
+2. Copy the content from [`cypress.env.example.json`](./cypress.env.example.json) into `cypress.env.json`.
 3. Update the values if necessary (or keep the defaults for the sample project).
 
 The project handles 3 types of users: `FREE`, `PRO`, and `ADMIN`.
 
 ## Running Tests
 
-The `package.json` file contains several scripts to run tests in different environments.
+The [`package.json`](./package.json) file contains several scripts to run tests in different environments.
 
 ### Open Mode
 
@@ -93,12 +93,12 @@ npm run cy:run:prod
 
 ## Project Structure
 
-- `cypress/e2e/`: Contains the test specifications, including role-based specs (`admin.cy.js`, `free.cy.js`, `pro.cy.js`) and auth flows (`login.cy.js`).
-- `cypress/support/`: Contains support files and custom commands.
+- [`cypress/e2e/`](./cypress/e2e/): Contains the test specifications, including role-based specs ([`admin.cy.js`](./cypress/e2e/admin.cy.js), [`free.cy.js`](./cypress/e2e/free.cy.js), [`pro.cy.js`](./cypress/e2e/pro.cy.js)) and auth flows ([`login.cy.js`](./cypress/e2e/login.cy.js)).
+- [`cypress/support/`](./cypress/support/): Contains support files and custom commands.
 
 ## Custom Commands
 
-This project adds the following custom commands in `cypress/support/commands.js`:
+This project adds the following custom commands in [`cypress/support/commands.js`](./cypress/support/commands.js):
 
 - `cy.login(environment, userType)`: Logs in via the GUI.
 - `cy.sessionLogin(environment, userType)`: Uses `cy.session()` to cache the user session, speeding up tests.
@@ -107,7 +107,7 @@ Both commands take an `environment` ('local', 'test', 'staging', 'prod') and a `
 
 ### Helper Function
 
-The `cypress/support/commands.js` file also contains a helper command:
+The [`cypress/support/commands.js`](./cypress/support/commands.js) file also contains a helper command:
 
 - `cy.setEnvironmentCredentials(environment)`: Retrieves credentials from `cypress.env.json` via `cy.env()` and returns the credentials object for the selected environment (`local`, `test`, `staging`, `prod`). The returned object is keyed by user roles (`FREE`, `PRO`, `ADMIN`). If an invalid environment is provided, the command logs an error to surface misconfiguration early.
 
