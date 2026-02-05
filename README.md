@@ -137,8 +137,8 @@ This project makes use of two new Cypress features to simplify environment handl
 
 Configured defaults:
 
-- In [cypress.config.js](cypress.config.js), `e2e.expose.environment` is set to `local`.
-- In [package.json](package.json), scripts pass `--expose environment=…` to target `test`, `staging`, or `prod` when needed.
+- In [`cypress.config.js`](cypress.config.js), `e2e.expose.environment` is set to `local`.
+- In [`package.json`](package.json), scripts pass `--expose environment=…` to target `test`, `staging`, or `prod` when needed.
 
 ___
 
