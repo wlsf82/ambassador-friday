@@ -133,7 +133,7 @@ This ensures the correct credentials are used for the currently selected environ
 This project makes use of two new Cypress features to simplify environment handling:
 
 - [**`cy.env()`**](https://docs.cypress.io/api/commands/env): Retrieves multiple values from `cypress.env.json` file or `CYPRESS_*` variables  in one call. We use it in `cy.setEnvironmentCredentials()` to load all environment credential sets and return the one matching the selected environment.
-- [**`Cypress.expose()`**](https://docs.cypress.io/api/cypress-api/expose): Reads config values exposed by Cypress (from `cypress.config.js` or CLI). We expose an `environment` value in [cypress.config.js](cypress.config.js) and override it via CLI flags in scripts (e.g., `--expose environment=test`). Specs read it with `Cypress.expose('environment')` to decide which credentials to use.
+- [**`Cypress.expose()`**](https://docs.cypress.io/api/cypress-api/expose): Reads config values exposed by Cypress (from `cypress.config.js` or CLI). We expose an `environment` value in [`cypress.config.js`](cypress.config.js) and override it via CLI flags in scripts (e.g., `--expose environment=test`). Specs read it with `Cypress.expose('environment')` to decide which credentials to use.
 
 Configured defaults:
 
